@@ -18,7 +18,7 @@ export default function AddWidgetModal({ onClose }: { onClose: () => void }) {
       apiUrl: url,
       refreshInterval: parseInt(refreshInterval),
       selectedFields: fields.split(',').map((f) => f.trim()),
-      displayMode: 'card',
+      displayMode: 'Card',
     });
     onClose();
   };
