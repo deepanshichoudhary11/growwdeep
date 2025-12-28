@@ -9,16 +9,17 @@ export default function AddWidgetModal({ onClose }: { onClose: () => void }) {
   const [url, setUrl] = useState('https://api.coinbase.com/v2/exchange-rates?currency=BTC');
 
   const submit = (e: React.FormEvent) => {
-    e.preventDefault();
-    addWidget({
-      id: uuidv4(),
-      name: name || 'New Widget',
-      apiUrl: url,
-      refreshInterval: 10,
-      selectedFields: ['data.rates.USD'] // Default field
-    });
-    onClose();
-  };
+  e.preventDefault();
+  addWidget({
+    id: uuidv4(),
+    name: name || 'New Widget',
+    apiUrl: url,
+    refreshInterval: parseInt(interval),
+    selectedFields: fields.split(',').map(f => f.trim()),
+    displayMode: 'card' // Add this line to fix the Type Error
+  });
+  onClose();
+};
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
