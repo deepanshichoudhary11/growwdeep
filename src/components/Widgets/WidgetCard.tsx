@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { Trash2, RefreshCw, AlertCircle } from 'lucide-react';
 import { useDashboardStore } from '@/store/useDashboardStore';
-import _ from 'lodash';
+import get from 'lodash/get';
 
 export default function WidgetCard({ widget }: { widget: any }) {
   const [data, setData] = useState<any>(null);
@@ -58,7 +58,7 @@ export default function WidgetCard({ widget }: { widget: any }) {
             <div key={path} className="flex justify-between border-b dark:border-slate-800 pb-1">
               <span className="text-xs text-gray-400 uppercase font-medium">{path.split('.').pop()}</span>
               <span className="font-mono text-green-600 dark:text-green-400 font-bold">
-                {String(_.get(data, path) || 'N/A')}
+                {String(get(data, path) || 'N/A')}
               </span>
             </div>
           ))}
