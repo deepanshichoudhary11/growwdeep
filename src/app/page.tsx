@@ -31,7 +31,7 @@ export default function Home() {
     <main className="min-h-screen bg-gray-50 dark:bg-black p-6 md:p-10 transition-colors">
       <div className="max-w-7xl mx-auto">
         <header className="flex justify-between items-center mb-10 border-b border-gray-200 dark:border-slate-800 pb-6">
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white">GrowwDeep</h1>
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Groww Dashboard</h1>
           <div className="flex items-center gap-4">
             <ThemeToggle />
             <button 

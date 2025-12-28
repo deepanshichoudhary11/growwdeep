@@ -13,7 +13,7 @@ export default function WidgetCard({ widget }: { widget: any }) {
   const fetchData = async () => {
     try {
       setLoading(true);
-      const res = await fetch(widget.apiUrl);
+      const res = await fetch(widget.apiUrl, { cache: 'no-store' });
       if (!res.ok) throw new Error('API Error or Rate Limit exceeded');
       const json = await res.json();
       setData(json);
